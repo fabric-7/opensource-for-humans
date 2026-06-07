@@ -1,6 +1,6 @@
 # Política de Financiamento
 
-Ajuda Perto precisa ser sustentável sem transformar vulnerabilidade em produto.
+OpenSource for Humans precisa ser sustentável sem transformar vulnerabilidade em produto.
 
 ## Permitido
 

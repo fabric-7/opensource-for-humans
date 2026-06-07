@@ -1,6 +1,6 @@
 # Roadmap
 
-Este roadmap organiza o desenvolvimento do Ajuda Perto em fases, épicos e tarefas menores para distribuição entre contribuidores no GitHub.
+Este roadmap organiza o desenvolvimento do OpenSource for Humans em fases, épicos e tarefas menores para distribuição entre contribuidores no GitHub.
 
 Ele deve ser usado como base para criar milestones, issues, discussions, RFCs e projetos no GitHub. O objetivo não é apenas listar funcionalidades, mas orientar uma comunidade open source a construir o produto sem violar a missão, a privacidade, a segurança, a governança e as políticas de dados do projeto.
 
@@ -1016,7 +1016,7 @@ Labels sugeridas: `area/governance`, `area/local-chapters`, `type/rfc`.
 
 Milestone: `phase-6-ecosystem`
 
-Objetivo: transformar o Ajuda Perto em infraestrutura aberta para parceiros, governos, organizações e comunidades, sem vender dados pessoais nem capturar a missão.
+Objetivo: transformar o OpenSource for Humans em infraestrutura aberta para parceiros, governos, organizações e comunidades, sem vender dados pessoais nem capturar a missão.
 
 Resultado esperado: API pública segura, integrações, relatórios de impacto agregados, ferramentas institucionais e sustentabilidade financeira responsável.
 

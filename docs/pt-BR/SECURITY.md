@@ -1,6 +1,6 @@
 # Segurança
 
-Segurança no Ajuda Perto é uma questão técnica e humana. Uma falha pode expor pessoas vulneráveis, organizações ou voluntários.
+Segurança no OpenSource for Humans é uma questão técnica e humana. Uma falha pode expor pessoas vulneráveis, organizações ou voluntários.
 
 ## Reporte vulnerabilidades
 

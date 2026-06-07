@@ -1,6 +1,6 @@
 # Privacy Principles
 
-Ajuda Perto must be private by default and secure by design.
+OpenSource for Humans must be private by default and secure by design.
 
 ## Main Rules
 

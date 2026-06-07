@@ -1,6 +1,6 @@
 # Política de Segurança para IA
 
-IA pode ajudar o Ajuda Perto, mas não deve substituir responsabilidade humana em decisões sensíveis.
+IA pode ajudar o OpenSource for Humans, mas não deve substituir responsabilidade humana em decisões sensíveis.
 
 ## Usos permitidos
 

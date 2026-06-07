@@ -1,6 +1,6 @@
 # Governance
 
-This document defines how Ajuda Perto makes decisions, distributes responsibilities, and protects its public-interest mission.
+This document defines how OpenSource for Humans makes decisions, distributes responsibilities, and protects its public-interest mission.
 
 ## Structure
 

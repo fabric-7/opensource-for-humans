@@ -1,6 +1,6 @@
 # Princípios de Privacidade
 
-Ajuda Perto deve ser privado por padrão e seguro desde a concepção.
+OpenSource for Humans deve ser privado por padrão e seguro desde a concepção.
 
 ## Regras principais
 

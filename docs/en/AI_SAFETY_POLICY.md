@@ -1,6 +1,6 @@
 # AI Safety Policy
 
-AI can help Ajuda Perto, but it must not replace human responsibility in sensitive decisions.
+AI can help OpenSource for Humans, but it must not replace human responsibility in sensitive decisions.
 
 ## Allowed Uses
 

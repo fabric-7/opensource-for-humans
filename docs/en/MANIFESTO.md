@@ -1,6 +1,6 @@
 # Manifesto
 
-Ajuda Perto exists to make it simpler, safer, and more dignified to find social help.
+OpenSource for Humans exists to make it simpler, safer, and more dignified to find social help.
 
 Technology was built by people. When it is used in areas that shape essential parts of life, it must first serve human protection, autonomy, and dignity.
 

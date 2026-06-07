@@ -1,6 +1,6 @@
 # Roadmap
 
-This roadmap organizes Ajuda Perto's development into phases, epics, and smaller tasks that can be distributed to contributors on GitHub.
+This roadmap organizes OpenSource for Humans' development into phases, epics, and smaller tasks that can be distributed to contributors on GitHub.
 
 It should be used as the basis for GitHub milestones, issues, discussions, RFCs, and project boards. The goal is not only to list features, but to help an open source community build the product without violating the project's mission, privacy rules, security requirements, governance model, or data policies.
 
@@ -1016,7 +1016,7 @@ Suggested labels: `area/governance`, `area/local-chapters`, `type/rfc`.
 
 Milestone: `phase-6-ecosystem`
 
-Goal: turn Ajuda Perto into open infrastructure for partners, governments, organizations, and communities without selling personal data or capturing the mission.
+Goal: turn OpenSource for Humans into open infrastructure for partners, governments, organizations, and communities without selling personal data or capturing the mission.
 
 Expected outcome: safe public API, integrations, aggregate impact reports, institutional tools, and responsible financial sustainability.
 

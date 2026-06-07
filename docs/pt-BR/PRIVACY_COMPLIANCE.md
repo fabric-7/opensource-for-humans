@@ -1,6 +1,6 @@
 # Conformidade com LGPD e GDPR/RGPD
 
-Este documento define o padrão mínimo de proteção de dados do Ajuda Perto.
+Este documento define o padrão mínimo de proteção de dados do OpenSource for Humans.
 
 O projeto deve cumprir simultaneamente:
 
@@ -13,7 +13,7 @@ Este documento é uma política operacional do projeto e não substitui revisão
 
 ## Regra de proteção máxima
 
-Se LGPD e GDPR/RGPD tratarem o mesmo tema de formas diferentes, o Ajuda Perto deve aplicar o padrão mais protetivo em:
+Se LGPD e GDPR/RGPD tratarem o mesmo tema de formas diferentes, o OpenSource for Humans deve aplicar o padrão mais protetivo em:
 
 - minimização de dados;
 - evitar armazenamento server-side de dados pessoais de usuários sempre que possível;

@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for wanting to contribute to Ajuda Perto.
+Thank you for wanting to contribute to OpenSource for Humans.
 
 This project accepts contributions in code, data, design, research, documentation, translation, accessibility, security, governance, and partnerships.
 

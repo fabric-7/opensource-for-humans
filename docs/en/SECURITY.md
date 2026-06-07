@@ -1,6 +1,6 @@
 # Security
 
-Security in Ajuda Perto is both technical and human. A failure can expose vulnerable people, organizations, or volunteers.
+Security in OpenSource for Humans is both technical and human. A failure can expose vulnerable people, organizations, or volunteers.
 
 ## Report Vulnerabilities
 

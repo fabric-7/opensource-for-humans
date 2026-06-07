@@ -1,6 +1,6 @@
 # Code of Conduct
 
-Ajuda Perto must be a safe, respectful, and useful community for people from different backgrounds, languages, countries, religions, identities, abilities, and social realities.
+OpenSource for Humans must be a safe, respectful, and useful community for people from different backgrounds, languages, countries, religions, identities, abilities, and social realities.
 
 ## Expected Behavior
 

@@ -1,6 +1,6 @@
 # Como contribuir
 
-Obrigado por querer contribuir com o Ajuda Perto.
+Obrigado por querer contribuir com o OpenSource for Humans.
 
 Este projeto aceita contribuições de código, dados, design, pesquisa, documentação, tradução, acessibilidade, segurança, governança e parcerias.
 

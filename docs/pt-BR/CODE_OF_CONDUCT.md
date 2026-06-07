@@ -1,6 +1,6 @@
 # Código de Conduta
 
-Ajuda Perto deve ser uma comunidade segura, respeitosa e útil para pessoas de diferentes origens, idiomas, países, religiões, identidades, capacidades e realidades sociais.
+OpenSource for Humans deve ser uma comunidade segura, respeitosa e útil para pessoas de diferentes origens, idiomas, países, religiões, identidades, capacidades e realidades sociais.
 
 ## Comportamentos esperados
 

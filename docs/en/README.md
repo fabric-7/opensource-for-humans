@@ -1,6 +1,6 @@
-# Ajuda Perto
+# OpenSource for Humans
 
-Ajuda Perto is an open source proposal for connecting people with nearby, trustworthy, and up-to-date social support services.
+OpenSource for Humans is an open source proposal for connecting people with nearby, trustworthy, and up-to-date social support services.
 
 The project vision is to organize access to social help as open public infrastructure: built by people, for people, with technology serving human dignity.
 

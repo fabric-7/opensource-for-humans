@@ -1,6 +1,6 @@
-# Ajuda Perto
+# OpenSource for Humans
 
-Ajuda Perto é uma proposta de plataforma open source para conectar pessoas a serviços de ajuda social próximos, confiáveis e atualizados.
+OpenSource for Humans é uma proposta de plataforma open source para conectar pessoas a serviços de ajuda social próximos, confiáveis e atualizados.
 
 A visão do projeto é organizar o acesso à ajuda social como infraestrutura pública aberta: feita por pessoas, para pessoas, com tecnologia a serviço da dignidade humana.
 

@@ -1,6 +1,6 @@
 # Data Policy
 
-This policy defines how Ajuda Perto collects, reviews, publishes, corrects, and removes data about organizations and social support services.
+This policy defines how OpenSource for Humans collects, reviews, publishes, corrects, and removes data about organizations and social support services.
 
 ## Core Principle
 

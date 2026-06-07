@@ -1,6 +1,6 @@
 # Funding Policy
 
-Ajuda Perto needs to be sustainable without turning vulnerability into a product.
+OpenSource for Humans needs to be sustainable without turning vulnerability into a product.
 
 ## Allowed
 

@@ -1,6 +1,6 @@
 # Governança
 
-Este documento define como o projeto Ajuda Perto deve tomar decisões, distribuir responsabilidades e proteger sua missão pública.
+Este documento define como o projeto OpenSource for Humans deve tomar decisões, distribuir responsabilidades e proteger sua missão pública.
 
 ## Estrutura
 

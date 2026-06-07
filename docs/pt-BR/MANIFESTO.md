@@ -1,6 +1,6 @@
 # Manifesto
 
-Ajuda Perto existe para tornar mais simples, seguro e digno encontrar ajuda social.
+OpenSource for Humans existe para tornar mais simples, seguro e digno encontrar ajuda social.
 
 A tecnologia foi construída por pessoas. Por isso, quando usada em áreas essenciais da vida, deve servir primeiro à proteção, autonomia e dignidade humana.
 

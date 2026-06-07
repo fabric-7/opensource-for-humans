@@ -1,6 +1,6 @@
 # Política de Dados
 
-Esta política define como o Ajuda Perto coleta, revisa, publica, corrige e remove dados sobre organizações e serviços de ajuda social.
+Esta política define como o OpenSource for Humans coleta, revisa, publica, corrige e remove dados sobre organizações e serviços de ajuda social.
 
 ## Princípio central
 

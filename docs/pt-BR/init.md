@@ -553,7 +553,7 @@ Para seu primeiro MVP, eu faria algo bem objetivo.
 
 ## Nome inicial
 
-**Ajuda Perto**
+**OpenSource for Humans**
 
 ## Local inicial
 
@@ -1770,7 +1770,7 @@ O melhor próximo passo seria montar um **MVP Canvas** com estas decisões:
 **Validação:** medir cliques em contato e feedback dos usuários
 **Modelo futuro:** SaaS para organizações + ESG para empresas + parcerias públicas
 
-Minha sugestão de nome provisório para começar: **Ajuda Perto**.
+Minha sugestão de nome provisório para começar: **OpenSource for Humans**.
 É simples, em português, fácil de entender e combina com o MVP local.
 
 [1]: https://www.findhelp.org/?utm_source=chatgpt.com "findhelp.org by Findhelp - Search and Connect to Social Care"

@@ -1,6 +1,6 @@
 # LGPD and GDPR/RGPD Compliance
 
-This document defines Ajuda Perto's minimum data protection standard.
+This document defines OpenSource for Humans' minimum data protection standard.
 
 The project must comply with both:
 
@@ -13,7 +13,7 @@ This document is an operational policy for the project and does not replace prof
 
 ## Maximum Protection Rule
 
-If LGPD and GDPR/RGPD address the same topic differently, Ajuda Perto must apply the most protective standard for:
+If LGPD and GDPR/RGPD address the same topic differently, OpenSource for Humans must apply the most protective standard for:
 
 - data minimization;
 - avoiding server-side storage of user personal data whenever possible;
