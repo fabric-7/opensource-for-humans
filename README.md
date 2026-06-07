@@ -7,6 +7,7 @@ English is the primary documentation language. All project documents now live in
 ## Documentation
 
 - [GitHub Pages landing page source](docs/site/index.html)
+- [Rendered documentation page source](docs/site/docs.html)
 
 ### English
 

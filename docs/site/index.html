@@ -130,6 +130,34 @@
         color: var(--green-dark);
       }
 
+      .language-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 0.2rem;
+      }
+
+      .language-toggle button {
+        min-width: 42px;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.88rem;
+        font-weight: 850;
+        padding: 0.42rem 0.55rem;
+      }
+
+      .language-toggle button[aria-pressed="true"] {
+        background: var(--green);
+        color: #fff;
+      }
+
       main {
         overflow: hidden;
       }
@@ -233,6 +261,10 @@
       .button.secondary {
         background: transparent;
         color: var(--green-dark);
+      }
+
+      .button[data-language-button] {
+        cursor: pointer;
       }
 
       .button:hover {
@@ -455,8 +487,11 @@
           <a href="#contribute">Contribute</a>
           <a href="#grow">Grow</a>
           <a href="#architecture">MVP Architecture</a>
-          <a href="en/README.md">Docs EN</a>
-          <a href="pt-BR/README.md">Docs PT-BR</a>
+          <a data-docs-home href="docs.html?lang=en">Docs</a>
+          <span class="language-toggle" aria-label="Language">
+            <button type="button" data-language-button="en" aria-pressed="true">EN</button>
+            <button type="button" data-language-button="pt-BR" aria-pressed="false">PT</button>
+          </span>
         </div>
       </nav>
     </header>
@@ -472,9 +507,9 @@
             into a simple, verifiable, community-built system.
           </p>
           <div class="actions" aria-label="Primary actions">
-            <a class="button" href="en/ROADMAP.md">Read the roadmap</a>
-            <a class="button secondary" href="en/CONTRIBUTING.md">Contribute</a>
-            <a class="button secondary" href="pt-BR/README.md">Português</a>
+            <a class="button" data-doc-link="ROADMAP.md" href="docs.html?lang=en&amp;doc=ROADMAP.md">Read the roadmap</a>
+            <a class="button secondary" data-doc-link="CONTRIBUTING.md" href="docs.html?lang=en&amp;doc=CONTRIBUTING.md">Contribute</a>
+            <a class="button secondary" data-language-button="pt-BR" href="?lang=pt-BR">Português</a>
           </div>
           <div class="hero-summary" aria-label="Project focus">
             <div>
@@ -832,10 +867,297 @@
       <div class="footer-inner">
         <span>OpenSource for Humans - technology built by people, for people.</span>
         <span>
-          <a href="en/ROADMAP.md">Roadmap EN</a> ·
-          <a href="pt-BR/ROADMAP.md">Roadmap PT-BR</a>
+          <a data-doc-link="ROADMAP.md" href="docs.html?lang=en&amp;doc=ROADMAP.md">Roadmap</a> ·
+          <a data-docs-home href="docs.html?lang=en">Documentation</a>
         </span>
       </div>
     </footer>
+    <script>
+      (() => {
+        const pt = {
+          "Skip to content": "Ir para o conteúdo",
+          "Main navigation": "Navegação principal",
+          "Language": "Idioma",
+          "Project": "Projeto",
+          "Contribute": "Contribuir",
+          "Grow": "Crescer",
+          "MVP Architecture": "Arquitetura do MVP",
+          "Docs": "Documentação",
+          "Open source for human dignity": "Open source pela dignidade humana",
+          "Open social infrastructure for finding trustworthy help nearby.": "Infraestrutura social aberta para encontrar ajuda confiável por perto.",
+          "OpenSource for Humans organizes information about food, shelter, healthcare, documents, employment, legal support, education, and volunteering into a simple, verifiable, community-built system.": "OpenSource for Humans organiza informações sobre alimentação, abrigo, saúde, documentos, emprego, apoio jurídico, educação e voluntariado em um sistema simples, verificável e construído pela comunidade.",
+          "Primary actions": "Ações principais",
+          "Read the roadmap": "Ler o roadmap",
+          "Project focus": "Foco do projeto",
+          "Current focus": "Foco atual",
+          "One local MVP, around 200 verified services, and a clear contribution path.": "Um MVP local, cerca de 200 serviços verificados e um caminho claro para contribuição.",
+          "Privacy first": "Privacidade em primeiro lugar",
+          "No server-side personal data storage for people seeking help at this stage.": "Sem armazenamento de dados pessoais no servidor para pessoas buscando ajuda nesta etapa.",
+          "Community powered": "Movido pela comunidade",
+          "Code, data, design, outreach, and local chapters all matter.": "Código, dados, design, divulgação e núcleos locais são todos importantes.",
+          "What the project is": "O que é o projeto",
+          "OpenSource for Humans is open social infrastructure. The first version is a local, mobile-first MVP with anonymous search and a verified catalog of real services. The long-term vision is global, but the first step must be small, useful, and trustworthy.": "OpenSource for Humans é infraestrutura social aberta. A primeira versão é um MVP local, mobile-first, com busca anônima e um catálogo verificado de serviços reais. A visão de longo prazo é global, mas o primeiro passo precisa ser pequeno, útil e confiável.",
+          "For people seeking help": "Para pessoas buscando ajuda",
+          "Find nearby services without creating an account, sharing an ID, providing an exact address, or having personal data stored server-side.": "Encontre serviços próximos sem criar conta, compartilhar documento, informar endereço exato ou ter dados pessoais armazenados no servidor.",
+          "For organizations": "Para organizações",
+          "Keep services up to date, respond to corrections, receive responsible visibility, and collaborate on a trustworthy public knowledge base.": "Mantenha serviços atualizados, responda correções, receba visibilidade responsável e colabore em uma base pública de conhecimento confiável.",
+          "For the community": "Para a comunidade",
+          "Contribute code, data, review, design, translation, security, partnerships, outreach, and local chapters.": "Contribua com código, dados, revisão, design, tradução, segurança, parcerias, divulgação e núcleos locais.",
+          "Project principles": "Princípios do projeto",
+          "No login to find help": "Sem login para encontrar ajuda",
+          "No sale of personal data": "Sem venda de dados pessoais",
+          "Verified data": "Dados verificados",
+          "Human-reviewed AI": "IA com revisão humana",
+          "What we will build first": "O que vamos construir primeiro",
+          "The MVP should prove that people can find real help through a simple experience. The recommended initial scope is one city, a few categories, and around 200 trustworthy services.": "O MVP deve provar que pessoas conseguem encontrar ajuda real por meio de uma experiência simples. O escopo inicial recomendado é uma cidade, algumas categorias e cerca de 200 serviços confiáveis.",
+          "Initial MVP phases": "Fases iniciais do MVP",
+          "01 Foundation": "01 Fundação",
+          "Governance, policies, labels, and backlog.": "Governança, políticas, labels e backlog.",
+          "Prepare the project to receive contributions safely.": "Preparar o projeto para receber contribuições com segurança.",
+          "02 Data": "02 Dados",
+          "Model, sources, and verification.": "Modelo, fontes e verificação.",
+          "Add services with source, status, and last update.": "Adicionar serviços com fonte, status e última atualização.",
+          "03 Product": "03 Produto",
+          "Search, details, and reports.": "Busca, detalhes e relatos.",
+          "Enable anonymous search, clear pages, and error correction.": "Permitir busca anônima, páginas claras e correção de erros.",
+          "04 Operations": "04 Operações",
+          "Admin, metrics, and routine.": "Administração, métricas e rotina.",
+          "Review data and measure impact without tracking people.": "Revisar dados e medir impacto sem rastrear pessoas.",
+          "How to contribute": "Como contribuir",
+          "You do not need special permission to start. Pick a small piece, open an issue or pull request, explain the impact, and respect the privacy, data, and security policies.": "Você não precisa de permissão especial para começar. Escolha uma parte pequena, abra uma issue ou pull request, explique o impacto e respeite as políticas de privacidade, dados e segurança.",
+          "Code and infrastructure": "Código e infraestrutura",
+          "Frontend mobile-first.": "Frontend mobile-first.",
+          "Catalog API.": "API do catálogo.",
+          "Admin panel.": "Painel administrativo.",
+          "Tests, CI, deployment, and observability.": "Testes, CI, deploy e observabilidade.",
+          "Data and verification": "Dados e verificação",
+          "Map real services.": "Mapear serviços reais.",
+          "Confirm official sources.": "Confirmar fontes oficiais.",
+          "Review duplicates.": "Revisar duplicidades.",
+          "Fix hours, contacts, and status.": "Corrigir horários, contatos e status.",
+          "Design, docs, and community": "Design, documentação e comunidade",
+          "Improve plain-language copy.": "Melhorar textos em linguagem simples.",
+          "Test accessibility.": "Testar acessibilidade.",
+          "Translate documentation.": "Traduzir documentação.",
+          "Help new contributors start.": "Ajudar novas pessoas contribuidoras a começar.",
+          "First rule:": "Primeira regra:",
+          "if a change collects or stores personal data from people seeking help, stop and ask for review. At the initial stage, the product must work without storing that data server-side.": "se uma mudança coleta ou armazena dados pessoais de pessoas buscando ajuda, pare e peça revisão. Na etapa inicial, o produto deve funcionar sem armazenar esses dados no servidor.",
+          "How to spread the word and bring more people in": "Como divulgar e trazer mais pessoas",
+          "An open source community grows when different people can find a concrete way to help. Outreach is not just posting links: it is building bridges, removing friction, and turning attention into contribution.": "Uma comunidade open source cresce quando pessoas diferentes encontram uma forma concreta de ajudar. Divulgação não é só postar links: é construir pontes, remover fricção e transformar atenção em contribuição.",
+          "Outreach channels": "Canais de divulgação",
+          "Create project profiles on LinkedIn, Instagram, and YouTube.": "Criar perfis do projeto no LinkedIn, Instagram e YouTube.",
+          "Publish weekly progress: closed issues, reviewed data, and next calls for help.": "Publicar progresso semanal: issues fechadas, dados revisados e próximos chamados de ajuda.",
+          "Share specific calls: \"we need to review 50 food support services\".": "Compartilhar chamados específicos: \"precisamos revisar 50 serviços de apoio alimentar\".",
+          "Join technology communities, universities, NGOs, and local groups.": "Participar de comunidades de tecnologia, universidades, ONGs e grupos locais.",
+          "Create short presentations for events, meetups, and social hackathons.": "Criar apresentações curtas para eventos, meetups e hackathons sociais.",
+          "Responsible sponsorships": "Patrocínios responsáveis",
+          "Ask companies to support infrastructure, domains, events, design, and contributor grants.": "Pedir que empresas apoiem infraestrutura, domínios, eventos, design e bolsas para pessoas contribuidoras.",
+          "Offer public recognition without selling priority in essential help results.": "Oferecer reconhecimento público sem vender prioridade nos resultados de ajuda essencial.",
+          "Create corporate volunteering campaigns for data review and accessibility.": "Criar campanhas de voluntariado corporativo para revisão de dados e acessibilidade.",
+          "Pursue grants, universities, foundations, and social impact programs.": "Buscar editais, universidades, fundações e programas de impacto social.",
+          "Publish supporters and conflicts of interest transparently.": "Publicar apoiadores e conflitos de interesse com transparência.",
+          "Initiative mindset": "Mentalidade de iniciativa",
+          "The project needs people who do what needs to be done responsibly. Do not wait for everything to be perfect. Pick a small part, document it, execute it, ask for review, and help the next person continue.": "O projeto precisa de pessoas que fazem o que precisa ser feito com responsabilidade. Não espere tudo ficar perfeito. Escolha uma parte pequena, documente, execute, peça revisão e ajude a próxima pessoa a continuar.",
+          "Notice a gap": "Perceba uma lacuna",
+          "Missing an issue, translation, contact, dataset, test, or outreach channel? Create the first draft.": "Falta uma issue, tradução, contato, conjunto de dados, teste ou canal de divulgação? Crie o primeiro rascunho.",
+          "Protect the mission": "Proteja a missão",
+          "Growth cannot override privacy, security, human review, transparency, or the dignity of people seeking help.": "Crescimento não pode passar por cima de privacidade, segurança, revisão humana, transparência ou dignidade das pessoas buscando ajuda.",
+          "Multiply people": "Multiplique pessoas",
+          "The best contribution does not end with you. It leaves instructions, examples, and next steps for more people to join.": "A melhor contribuição não termina em você. Ela deixa instruções, exemplos e próximos passos para mais pessoas participarem.",
+          "Simple MVP architecture": "Arquitetura simples do MVP",
+          "The diagram below summarizes the MVP from the roadmap: public search without login, verified catalog, manual review, minimal API, institutional database, and aggregate metrics without user tracking.": "O diagrama abaixo resume o MVP do roadmap: busca pública sem login, catálogo verificado, revisão manual, API mínima, base institucional e métricas agregadas sem rastreamento de usuários.",
+          "OpenSource for Humans MVP architecture diagram": "Diagrama da arquitetura do MVP do OpenSource for Humans",
+          "OpenSource for Humans MVP": "MVP do OpenSource for Humans",
+          "Anonymous search + verified catalog + human review + aggregate metrics": "Busca anônima + catálogo verificado + revisão humana + métricas agregadas",
+          "People seeking help": "Pessoas buscando ajuda",
+          "No mandatory login": "Sem login obrigatório",
+          "No server-side personal data": "Sem dados pessoais no servidor",
+          "Organizations": "Organizações",
+          "Services, contacts, hours": "Serviços, contatos, horários",
+          "Changes submitted for review": "Mudanças enviadas para revisão",
+          "Volunteer verifiers": "Pessoas voluntárias verificadoras",
+          "Sources, reports, duplicates": "Fontes, relatos, duplicidades",
+          "No automatic publication": "Sem publicação automática",
+          "Public web app": "Aplicação web pública",
+          "Home, search, service details": "Início, busca e detalhes do serviço",
+          "Suggest service and report error": "Sugerir serviço e relatar erro",
+          "Mobile-first and accessible": "Mobile-first e acessível",
+          "Minimal admin panel": "Painel administrativo mínimo",
+          "Suggestions and reports queue": "Fila de sugestões e relatos",
+          "Status, verification, history": "Status, verificação e histórico",
+          "Human review before publishing": "Revisão humana antes da publicação",
+          "Minimal public API": "API pública mínima",
+          "GET services and categories": "GET serviços e categorias",
+          "POST suggestions and reports": "POST sugestões e relatos",
+          "Institutional database": "Base institucional",
+          "Organizations, services, places": "Organizações, serviços, locais",
+          "Sources and verification logs": "Fontes e logs de verificação",
+          "Aggregate metrics": "Métricas agregadas",
+          "Searches by city/category": "Buscas por cidade/categoria",
+          "No profile or tracking": "Sem perfil ou rastreamento",
+          "Jobs": "Tarefas",
+          "Import": "Importar",
+          "Review": "Revisar",
+          "MVP privacy rule": "Regra de privacidade do MVP",
+          "End users generate no server-side profile, individual history, precise GPS, or identifiable analytics.": "Usuários finais não geram perfil no servidor, histórico individual, GPS preciso ou analytics identificáveis.",
+          "Next evolution: semantic search, organization dashboards, and local chapters should only come after the MVP proves value with trustworthy data and preserved privacy.": "Próxima evolução: busca semântica, painéis para organizações e núcleos locais só devem vir depois que o MVP provar valor com dados confiáveis e privacidade preservada.",
+          "Start with one small task": "Comece com uma tarefa pequena",
+          "The project needs concrete action. These are good first areas for opening or taking issues.": "O projeto precisa de ação concreta. Estas são boas primeiras áreas para abrir ou assumir issues.",
+          "Foundation": "Fundação",
+          "Create issue and PR templates.": "Criar templates de issue e PR.",
+          "Define the license.": "Definir a licença.",
+          "Configure labels and milestones.": "Configurar labels e milestones.",
+          "Data": "Dados",
+          "Map the first 50 services.": "Mapear os primeiros 50 serviços.",
+          "Verify sources and contacts.": "Verificar fontes e contatos.",
+          "Create the quality checklist.": "Criar a checklist de qualidade.",
+          "Product": "Produto",
+          "Prototype mobile search.": "Prototipar busca mobile.",
+          "Design the service page.": "Desenhar a página de serviço.",
+          "Define the minimal API.": "Definir a API mínima.",
+          "OpenSource for Humans - technology built by people, for people.": "OpenSource for Humans - tecnologia feita por pessoas, para pessoas.",
+          "Roadmap": "Roadmap",
+          "Documentation": "Documentação"
+        };
+
+        const meta = {
+          en: {
+            title: "OpenSource for Humans - Open social help infrastructure",
+            description:
+              "OpenSource for Humans is an open source initiative to connect people with trustworthy, nearby, and verifiable social support."
+          },
+          "pt-BR": {
+            title: "OpenSource for Humans - Infraestrutura aberta de ajuda social",
+            description:
+              "OpenSource for Humans é uma iniciativa open source para conectar pessoas a apoio social confiável, próximo e verificável."
+          }
+        };
+
+        const originalText = new WeakMap();
+        const originalAttrs = new WeakMap();
+        const translatableAttrs = ["aria-label", "title"];
+
+        function normalizeText(value) {
+          return value.replace(/\s+/g, " ").trim();
+        }
+
+        function normalizeLang(value) {
+          const lang = String(value || "").toLowerCase();
+          return lang === "pt" || lang === "pt-br" || lang === "pt_br" ? "pt-BR" : "en";
+        }
+
+        function preserveOuterWhitespace(original, translated) {
+          const leading = original.match(/^\s*/)[0];
+          const trailing = original.match(/\s*$/)[0];
+          return `${leading}${translated}${trailing}`;
+        }
+
+        function translateTextNodes(lang) {
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+              const parent = node.parentElement;
+              if (!parent || ["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) {
+                return NodeFilter.FILTER_REJECT;
+              }
+              return normalizeText(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }
+          });
+
+          const nodes = [];
+          while (walker.nextNode()) {
+            nodes.push(walker.currentNode);
+          }
+
+          nodes.forEach((node) => {
+            if (!originalText.has(node)) {
+              originalText.set(node, node.nodeValue);
+            }
+            const original = originalText.get(node);
+            const key = normalizeText(original);
+            node.nodeValue = lang === "pt-BR" && pt[key] ? preserveOuterWhitespace(original, pt[key]) : original;
+          });
+        }
+
+        function translateAttributes(lang) {
+          document.querySelectorAll("*").forEach((element) => {
+            translatableAttrs.forEach((attr) => {
+              if (!element.hasAttribute(attr)) return;
+              if (!originalAttrs.has(element)) {
+                originalAttrs.set(element, {});
+              }
+              const attrs = originalAttrs.get(element);
+              if (!attrs[attr]) {
+                attrs[attr] = element.getAttribute(attr);
+              }
+              const original = attrs[attr];
+              const key = normalizeText(original);
+              element.setAttribute(attr, lang === "pt-BR" && pt[key] ? pt[key] : original);
+            });
+          });
+        }
+
+        function updateDocLinks(lang) {
+          document.querySelectorAll("[data-doc-link]").forEach((link) => {
+            const doc = link.getAttribute("data-doc-link");
+            link.href = `docs.html?lang=${encodeURIComponent(lang)}&doc=${encodeURIComponent(doc)}`;
+          });
+          document.querySelectorAll("[data-docs-home]").forEach((link) => {
+            link.href = `docs.html?lang=${encodeURIComponent(lang)}`;
+          });
+        }
+
+        function updateLanguageButtons(lang) {
+          document.querySelectorAll("[data-language-button]").forEach((control) => {
+            const active = normalizeLang(control.getAttribute("data-language-button")) === lang;
+            if (control.tagName === "BUTTON") {
+              control.setAttribute("aria-pressed", String(active));
+            }
+            if (control.tagName === "A") {
+              const nextLang = lang === "pt-BR" ? "en" : "pt-BR";
+              control.setAttribute("data-language-button", nextLang);
+              control.href = `?lang=${nextLang}`;
+              control.textContent = lang === "pt-BR" ? "English" : "Português";
+            }
+          });
+        }
+
+        function updateUrl(lang) {
+          const url = new URL(window.location.href);
+          if (lang === "en") {
+            url.searchParams.delete("lang");
+          } else {
+            url.searchParams.set("lang", lang);
+          }
+          history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+        }
+
+        function applyLanguage(lang, updateHistory = true) {
+          const normalized = normalizeLang(lang);
+          document.documentElement.lang = normalized;
+          document.title = meta[normalized].title;
+          const description = document.querySelector('meta[name="description"]');
+          if (description) {
+            description.setAttribute("content", meta[normalized].description);
+          }
+          translateTextNodes(normalized);
+          translateAttributes(normalized);
+          updateDocLinks(normalized);
+          updateLanguageButtons(normalized);
+          if (updateHistory) {
+            updateUrl(normalized);
+          }
+        }
+
+        document.querySelectorAll("[data-language-button]").forEach((control) => {
+          control.addEventListener("click", (event) => {
+            event.preventDefault();
+            applyLanguage(control.getAttribute("data-language-button"));
+          });
+        });
+
+        const initialParams = new URLSearchParams(window.location.search);
+        applyLanguage(normalizeLang(initialParams.get("lang")), false);
+      })();
+    </script>
   </body>
 </html>

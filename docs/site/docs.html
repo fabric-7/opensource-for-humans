@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Read the OpenSource for Humans project documentation in English or Portuguese."
+    />
+    <title>OpenSource for Humans - Documentation</title>
+    <style>
+      :root {
+        --bg: #f7f8f5;
+        --surface: #ffffff;
+        --ink: #17211d;
+        --muted: #53645c;
+        --line: #dfe5dd;
+        --green: #1f7a5c;
+        --green-dark: #15513f;
+        --blue: #2867a8;
+        --blue-soft: #e8f1fb;
+        --coral: #c9503c;
+        --gold-soft: #fff3d6;
+        --shadow: 0 18px 48px rgba(23, 33, 29, 0.1);
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--green-dark);
+        font-weight: 750;
+        text-decoration-color: rgba(31, 122, 92, 0.35);
+        text-underline-offset: 0.18em;
+      }
+
+      a:hover {
+        text-decoration-color: currentColor;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: 0.5rem;
+        z-index: 10;
+        transform: translateY(-140%);
+        border-radius: 6px;
+        background: var(--ink);
+        color: #fff;
+        padding: 0.6rem 0.8rem;
+        text-decoration: none;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 248, 245, 0.94);
+        backdrop-filter: blur(14px);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+
+      .nav {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 850;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--green);
+        color: #fff;
+        font-size: 1.15rem;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.85rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--green-dark);
+      }
+
+      .language-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 0.2rem;
+      }
+
+      .language-toggle button {
+        min-width: 42px;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.88rem;
+        font-weight: 850;
+        padding: 0.42rem 0.55rem;
+      }
+
+      .language-toggle button[aria-pressed="true"] {
+        background: var(--green);
+        color: #fff;
+      }
+
+      .docs-hero {
+        border-bottom: 1px solid var(--line);
+        background: #edf6f0;
+      }
+
+      .docs-hero-inner {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: clamp(2.8rem, 7vw, 5.2rem) 0 clamp(2.2rem, 5vw, 3.8rem);
+      }
+
+      .eyebrow {
+        color: var(--green-dark);
+        font-size: 0.86rem;
+        font-weight: 850;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 840px;
+        margin: 0.85rem 0 1rem;
+        font-size: clamp(2.2rem, 6vw, 4.5rem);
+      }
+
+      .lead {
+        max-width: 780px;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+      }
+
+      .docs-shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+        gap: clamp(1.2rem, 3vw, 2rem);
+        padding: clamp(2rem, 5vw, 3.6rem) 0;
+        align-items: start;
+      }
+
+      .docs-sidebar {
+        position: sticky;
+        top: 92px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 10px 30px rgba(23, 33, 29, 0.05);
+        overflow: hidden;
+      }
+
+      .sidebar-heading {
+        border-bottom: 1px solid var(--line);
+        padding: 1rem;
+      }
+
+      .sidebar-heading strong {
+        display: block;
+        color: var(--ink);
+      }
+
+      .sidebar-heading span {
+        color: var(--muted);
+        display: block;
+        font-size: 0.92rem;
+        margin-top: 0.25rem;
+      }
+
+      .doc-list {
+        display: grid;
+        max-height: calc(100vh - 210px);
+        overflow: auto;
+      }
+
+      .doc-list a {
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        display: grid;
+        gap: 0.18rem;
+        padding: 0.85rem 1rem;
+        text-decoration: none;
+      }
+
+      .doc-list a:last-child {
+        border-bottom: 0;
+      }
+
+      .doc-list a:hover,
+      .doc-list a[aria-current="page"] {
+        background: var(--blue-soft);
+      }
+
+      .doc-list a[aria-current="page"] {
+        border-left: 4px solid var(--green);
+        padding-left: calc(1rem - 4px);
+      }
+
+      .doc-list span {
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 500;
+      }
+
+      .doc-panel {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .doc-toolbar {
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 1rem clamp(1rem, 3vw, 1.5rem);
+      }
+
+      .doc-toolbar span {
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .doc-toolbar a {
+        color: var(--green-dark);
+      }
+
+      .doc-status {
+        color: var(--muted);
+        padding: 1rem clamp(1rem, 3vw, 1.5rem);
+      }
+
+      .doc-status[hidden] {
+        display: none;
+      }
+
+      .markdown-body {
+        padding: clamp(1.2rem, 4vw, 2.2rem);
+      }
+
+      .markdown-body > *:first-child {
+        margin-top: 0;
+      }
+
+      .markdown-body > *:last-child {
+        margin-bottom: 0;
+      }
+
+      .markdown-body h1 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        margin: 0 0 1rem;
+      }
+
+      .markdown-body h2 {
+        border-top: 1px solid var(--line);
+        font-size: clamp(1.45rem, 3vw, 2.1rem);
+        margin: 2.2rem 0 0.8rem;
+        padding-top: 1.5rem;
+      }
+
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        margin: 1.6rem 0 0.6rem;
+      }
+
+      .markdown-body h4 {
+        font-size: 1.05rem;
+        margin: 1.3rem 0 0.5rem;
+      }
+
+      .markdown-body p,
+      .markdown-body li {
+        color: var(--muted);
+      }
+
+      .markdown-body ul,
+      .markdown-body ol {
+        padding-left: 1.45rem;
+      }
+
+      .markdown-body li + li {
+        margin-top: 0.36rem;
+      }
+
+      .markdown-body blockquote {
+        border-left: 4px solid var(--green);
+        margin: 1.2rem 0;
+        padding: 0.2rem 0 0.2rem 1rem;
+      }
+
+      .markdown-body code {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #f0f3ef;
+        color: var(--ink);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.92em;
+        padding: 0.12rem 0.32rem;
+      }
+
+      .markdown-body pre {
+        overflow: auto;
+        border-radius: 8px;
+        background: #17211d;
+        color: #f7f8f5;
+        padding: 1rem;
+      }
+
+      .markdown-body pre code {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      .heading-anchor {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .heading-anchor:hover {
+        text-decoration: underline;
+        text-decoration-color: rgba(31, 122, 92, 0.35);
+      }
+
+      .error-box {
+        border: 1px solid #dfa093;
+        border-radius: 8px;
+        background: #fdebe7;
+        color: #7a2a20;
+        padding: 1rem;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 2rem 0;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 0.8rem 0;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+        }
+
+        .docs-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .docs-sidebar {
+          position: static;
+        }
+
+        .doc-list {
+          max-height: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to documentation</a>
+    <header>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="OpenSource for Humans">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span>OpenSource for Humans</span>
+        </a>
+        <div class="nav-links">
+          <a id="site-link" href="index.html">Project site</a>
+          <a id="docs-home-link" href="docs.html?lang=en">Documentation</a>
+          <span class="language-toggle" aria-label="Language">
+            <button type="button" data-language="en" aria-pressed="true">EN</button>
+            <button type="button" data-language="pt-BR" aria-pressed="false">PT</button>
+          </span>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="docs-hero">
+        <div class="docs-hero-inner">
+          <div class="eyebrow" id="hero-eyebrow">Project documentation</div>
+          <h1 id="hero-title">Understand OpenSource for Humans without reading the repository first.</h1>
+          <p class="lead" id="hero-lead">
+            These pages render the Markdown documents in a friendlier format for
+            people learning about the mission, roadmap, privacy rules, governance,
+            funding boundaries, and ways to help.
+          </p>
+        </div>
+      </section>
+
+      <section class="docs-shell">
+        <aside class="docs-sidebar" aria-labelledby="sidebar-title">
+          <div class="sidebar-heading">
+            <strong id="sidebar-title">Documents</strong>
+            <span id="sidebar-description">Choose a document to read.</span>
+          </div>
+          <nav class="doc-list" id="doc-list" aria-label="Documentation documents"></nav>
+        </aside>
+
+        <article class="doc-panel" aria-live="polite">
+          <div class="doc-toolbar">
+            <span id="current-doc-label">Loading documentation...</span>
+            <a id="source-link" href="en/README.md">View source Markdown</a>
+          </div>
+          <div class="doc-status" id="doc-status">Loading documentation...</div>
+          <div class="markdown-body" id="doc-content"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span id="footer-copy">OpenSource for Humans - technology built by people, for people.</span>
+        <span>
+          <a id="footer-site-link" href="index.html">Project site</a>
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const DOCS = {
+          en: [
+            ["README.md", "Project overview", "Start here for the mission and document map."],
+            ["MANIFESTO.md", "Manifesto", "Founding principles and project direction."],
+            ["ROADMAP.md", "Roadmap", "Suggested phases, epics, and implementation priorities."],
+            ["PRIVACY_PRINCIPLES.md", "Privacy principles", "Product rules that protect people seeking help."],
+            ["PRIVACY_COMPLIANCE.md", "LGPD and GDPR/RGPD compliance", "Plain-language privacy and compliance commitments."],
+            ["DATA_POLICY.md", "Data policy", "How service information is collected, reviewed, and removed."],
+            ["AI_SAFETY_POLICY.md", "AI safety policy", "Boundaries for responsible AI assistance."],
+            ["GOVERNANCE.md", "Governance", "How the community makes decisions and handles roles."],
+            ["FUNDING_POLICY.md", "Funding policy", "Funding boundaries that protect the mission."],
+            ["LOCAL_CHAPTERS.md", "Local chapters", "How local communities can organize around the project."],
+            ["CODE_OF_CONDUCT.md", "Code of conduct", "Expected community behavior."],
+            ["CONTRIBUTING.md", "Contributing", "Ways contributors can help safely and clearly."],
+            ["SECURITY.md", "Security", "How to report vulnerabilities and incidents."]
+          ],
+          "pt-BR": [
+            ["README.md", "Visão geral do projeto", "Comece aqui pela missão e pelo mapa dos documentos."],
+            ["MANIFESTO.md", "Manifesto", "Princípios fundadores e direção do projeto."],
+            ["ROADMAP.md", "Roadmap", "Fases, épicos e prioridades sugeridas de implementação."],
+            ["PRIVACY_PRINCIPLES.md", "Princípios de privacidade", "Regras de produto que protegem pessoas buscando ajuda."],
+            ["PRIVACY_COMPLIANCE.md", "Conformidade LGPD e GDPR/RGPD", "Compromissos de privacidade e conformidade em linguagem simples."],
+            ["DATA_POLICY.md", "Política de dados", "Como informações de serviços são coletadas, revisadas e removidas."],
+            ["AI_SAFETY_POLICY.md", "Política de segurança em IA", "Limites para assistência responsável com IA."],
+            ["GOVERNANCE.md", "Governança", "Como a comunidade toma decisões e lida com papéis."],
+            ["FUNDING_POLICY.md", "Política de financiamento", "Limites de financiamento que protegem a missão."],
+            ["LOCAL_CHAPTERS.md", "Núcleos locais", "Como comunidades locais podem se organizar em torno do projeto."],
+            ["CODE_OF_CONDUCT.md", "Código de conduta", "Comportamento esperado na comunidade."],
+            ["CONTRIBUTING.md", "Contribuindo", "Formas de contribuir com segurança e clareza."],
+            ["SECURITY.md", "Segurança", "Como reportar vulnerabilidades e incidentes."],
+            ["init.md", "Visão inicial", "Documento inicial sobre produto, missão e próximos passos."]
+          ]
+        };
+
+        const COPY = {
+          en: {
+            htmlLang: "en",
+            title: "OpenSource for Humans - Documentation",
+            description: "Read the OpenSource for Humans project documentation in English or Portuguese.",
+            skip: "Skip to documentation",
+            nav: "Main navigation",
+            projectSite: "Project site",
+            docsHome: "Documentation",
+            language: "Language",
+            eyebrow: "Project documentation",
+            heroTitle: "Understand OpenSource for Humans without reading the repository first.",
+            heroLead:
+              "These pages render the Markdown documents in a friendlier format for people learning about the mission, roadmap, privacy rules, governance, funding boundaries, and ways to help.",
+            sidebarTitle: "Documents",
+            sidebarDescription: "Choose a document to read.",
+            docListLabel: "Documentation documents",
+            loading: "Loading documentation...",
+            source: "View source Markdown",
+            footer: "OpenSource for Humans - technology built by people, for people.",
+            errorTitle: "The document could not be loaded.",
+            errorBody: "Check that the Markdown file exists in the selected language.",
+            missingInLanguage: "This document is not available in the selected language yet."
+          },
+          "pt-BR": {
+            htmlLang: "pt-BR",
+            title: "OpenSource for Humans - Documentação",
+            description: "Leia a documentação do OpenSource for Humans em inglês ou português.",
+            skip: "Ir para a documentação",
+            nav: "Navegação principal",
+            projectSite: "Site do projeto",
+            docsHome: "Documentação",
+            language: "Idioma",
+            eyebrow: "Documentação do projeto",
+            heroTitle: "Entenda o OpenSource for Humans sem ler o repositório primeiro.",
+            heroLead:
+              "Estas páginas renderizam os documentos Markdown em um formato mais amigável para pessoas conhecendo a missão, o roadmap, as regras de privacidade, a governança, os limites de financiamento e as formas de ajudar.",
+            sidebarTitle: "Documentos",
+            sidebarDescription: "Escolha um documento para ler.",
+            docListLabel: "Documentos da documentação",
+            loading: "Carregando documentação...",
+            source: "Ver Markdown original",
+            footer: "OpenSource for Humans - tecnologia feita por pessoas, para pessoas.",
+            errorTitle: "Não foi possível carregar o documento.",
+            errorBody: "Confira se o arquivo Markdown existe no idioma selecionado.",
+            missingInLanguage: "Este documento ainda não está disponível no idioma selecionado."
+          }
+        };
+
+        const state = {
+          lang: "en",
+          doc: "README.md",
+          loadedPath: "en/README.md",
+          references: new Map()
+        };
+
+        const els = {
+          skip: document.querySelector(".skip-link"),
+          nav: document.querySelector(".nav"),
+          siteLink: document.getElementById("site-link"),
+          docsHomeLink: document.getElementById("docs-home-link"),
+          heroEyebrow: document.getElementById("hero-eyebrow"),
+          heroTitle: document.getElementById("hero-title"),
+          heroLead: document.getElementById("hero-lead"),
+          sidebarTitle: document.getElementById("sidebar-title"),
+          sidebarDescription: document.getElementById("sidebar-description"),
+          docList: document.getElementById("doc-list"),
+          currentDocLabel: document.getElementById("current-doc-label"),
+          sourceLink: document.getElementById("source-link"),
+          status: document.getElementById("doc-status"),
+          content: document.getElementById("doc-content"),
+          footerCopy: document.getElementById("footer-copy"),
+          footerSiteLink: document.getElementById("footer-site-link"),
+          description: document.querySelector('meta[name="description"]')
+        };
+
+        function normalizeLang(value) {
+          const lang = String(value || "").toLowerCase();
+          return lang === "pt" || lang === "pt-br" || lang === "pt_br" ? "pt-BR" : "en";
+        }
+
+        function getDocMeta(lang, file) {
+          return DOCS[lang].find(([doc]) => doc === file);
+        }
+
+        function getInitialState() {
+          const params = new URLSearchParams(window.location.search);
+          const lang = normalizeLang(params.get("lang"));
+          const requestedDoc = params.get("doc") || "README.md";
+          const doc = getDocMeta(lang, requestedDoc) ? requestedDoc : "README.md";
+          return { lang, doc };
+        }
+
+        function setCopy() {
+          const copy = COPY[state.lang];
+          document.documentElement.lang = copy.htmlLang;
+          document.title = copy.title;
+          els.description.setAttribute("content", copy.description);
+          els.skip.textContent = copy.skip;
+          els.nav.setAttribute("aria-label", copy.nav);
+          document.querySelector(".language-toggle").setAttribute("aria-label", copy.language);
+          els.siteLink.textContent = copy.projectSite;
+          els.docsHomeLink.textContent = copy.docsHome;
+          els.heroEyebrow.textContent = copy.eyebrow;
+          els.heroTitle.textContent = copy.heroTitle;
+          els.heroLead.textContent = copy.heroLead;
+          els.sidebarTitle.textContent = copy.sidebarTitle;
+          els.sidebarDescription.textContent = copy.sidebarDescription;
+          els.docList.setAttribute("aria-label", copy.docListLabel);
+          els.sourceLink.textContent = copy.source;
+          els.footerCopy.textContent = copy.footer;
+          els.footerSiteLink.textContent = copy.projectSite;
+          els.siteLink.href = `index.html${state.lang === "pt-BR" ? "?lang=pt-BR" : ""}`;
+          els.footerSiteLink.href = els.siteLink.href;
+          els.docsHomeLink.href = `docs.html?lang=${encodeURIComponent(state.lang)}`;
+          document.querySelectorAll("[data-language]").forEach((button) => {
+            button.setAttribute("aria-pressed", String(button.dataset.language === state.lang));
+          });
+        }
+
+        function renderDocList() {
+          els.docList.innerHTML = DOCS[state.lang]
+            .map(([file, title, description]) => {
+              const current = file === state.doc ? ' aria-current="page"' : "";
+              const href = `docs.html?lang=${encodeURIComponent(state.lang)}&doc=${encodeURIComponent(file)}`;
+              return `<a href="${href}" data-doc="${escapeAttr(file)}"${current}><strong>${escapeHtml(title)}</strong><span>${escapeHtml(description)}</span></a>`;
+            })
+            .join("");
+        }
+
+        function setUrl() {
+          const url = new URL(window.location.href);
+          url.searchParams.set("lang", state.lang);
+          url.searchParams.set("doc", state.doc);
+          history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+        }
+
+        function setLoading() {
+          const copy = COPY[state.lang];
+          els.currentDocLabel.textContent = copy.loading;
+          els.status.hidden = false;
+          els.status.textContent = copy.loading;
+          els.content.innerHTML = "";
+        }
+
+        async function fetchMarkdown(lang, file) {
+          const candidates = [`${lang}/${file}`, `../${lang}/${file}`];
+          let lastError = null;
+          for (const path of candidates) {
+            try {
+              const response = await fetch(path, { cache: "no-cache" });
+              if (response.ok) {
+                return { markdown: await response.text(), path };
+              }
+              lastError = new Error(`${response.status} ${response.statusText}`);
+            } catch (error) {
+              lastError = error;
+            }
+          }
+          throw lastError || new Error("Document not found");
+        }
+
+        async function loadDocument(pushUrl = true) {
+          setCopy();
+          renderDocList();
+          setLoading();
+
+          const meta = getDocMeta(state.lang, state.doc);
+          if (!meta) {
+            renderError(COPY[state.lang].missingInLanguage);
+            return;
+          }
+
+          try {
+            const result = await fetchMarkdown(state.lang, state.doc);
+            state.loadedPath = result.path;
+            els.sourceLink.href = result.path;
+            els.currentDocLabel.textContent = meta[1];
+            els.status.hidden = true;
+            els.content.innerHTML = renderMarkdown(result.markdown);
+            if (pushUrl) {
+              setUrl();
+            }
+            if (window.location.hash) {
+              const targetId = decodeURIComponent(window.location.hash.slice(1));
+              document.getElementById(targetId)?.scrollIntoView();
+            }
+          } catch (error) {
+            renderError(error.message);
+          }
+        }
+
+        function renderError(detail) {
+          const copy = COPY[state.lang];
+          els.currentDocLabel.textContent = copy.errorTitle;
+          els.status.hidden = true;
+          els.content.innerHTML = `<div class="error-box"><strong>${escapeHtml(copy.errorTitle)}</strong><p>${escapeHtml(copy.errorBody)}</p><p>${escapeHtml(detail || "")}</p></div>`;
+        }
+
+        function extractReferences(markdown) {
+          state.references = new Map();
+          return markdown.replace(/^\[([^\]]+)\]:\s+(\S+)(?:\s+"[^"]*")?\s*$/gm, (_, key, href) => {
+            state.references.set(key.toLowerCase(), href);
+            return "";
+          });
+        }
+
+        function renderMarkdown(markdown) {
+          const source = extractReferences(markdown).replace(/\r\n/g, "\n");
+          const lines = source.split("\n");
+          const html = [];
+          const paragraph = [];
+          const slugs = new Map();
+          let listType = null;
+          let inCode = false;
+          let codeLines = [];
+
+          function flushParagraph() {
+            if (!paragraph.length) return;
+            html.push(`<p>${renderInline(paragraph.join(" "))}</p>`);
+            paragraph.length = 0;
+          }
+
+          function closeList() {
+            if (!listType) return;
+            html.push(`</${listType}>`);
+            listType = null;
+          }
+
+          function uniqueSlug(text) {
+            const base =
+              text
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "") || "section";
+            const count = slugs.get(base) || 0;
+            slugs.set(base, count + 1);
+            return count ? `${base}-${count + 1}` : base;
+          }
+
+          lines.forEach((line) => {
+            if (/^```/.test(line.trim())) {
+              if (inCode) {
+                html.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+                inCode = false;
+                codeLines = [];
+              } else {
+                flushParagraph();
+                closeList();
+                inCode = true;
+              }
+              return;
+            }
+
+            if (inCode) {
+              codeLines.push(line);
+              return;
+            }
+
+            if (!line.trim()) {
+              flushParagraph();
+              closeList();
+              return;
+            }
+
+            const heading = line.match(/^(#{1,4})\s+(.+?)\s*#*$/);
+            if (heading) {
+              flushParagraph();
+              closeList();
+              const level = heading[1].length;
+              const rawText = heading[2].trim();
+              const id = uniqueSlug(stripMarkdown(rawText));
+              html.push(`<h${level} id="${id}"><a class="heading-anchor" href="#${id}">${renderInline(rawText)}</a></h${level}>`);
+              return;
+            }
+
+            const quote = line.match(/^>\s?(.*)$/);
+            if (quote) {
+              flushParagraph();
+              closeList();
+              html.push(`<blockquote><p>${renderInline(quote[1])}</p></blockquote>`);
+              return;
+            }
+
+            const unordered = line.match(/^\s*[-*]\s+(.+)$/);
+            if (unordered) {
+              flushParagraph();
+              if (listType !== "ul") {
+                closeList();
+                listType = "ul";
+                html.push("<ul>");
+              }
+              html.push(`<li>${renderInline(unordered[1])}</li>`);
+              return;
+            }
+
+            const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
+            if (ordered) {
+              flushParagraph();
+              if (listType !== "ol") {
+                closeList();
+                listType = "ol";
+                html.push("<ol>");
+              }
+              html.push(`<li>${renderInline(ordered[1])}</li>`);
+              return;
+            }
+
+            paragraph.push(line.trim());
+          });
+
+          if (inCode) {
+            html.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+          }
+          flushParagraph();
+          closeList();
+          return html.join("\n");
+        }
+
+        function stripMarkdown(value) {
+          return value
+            .replace(/`([^`]+)`/g, "$1")
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+            .replace(/\[([^\]]+)\]\[[^\]]+\]/g, "$1")
+            .replace(/\*\*([^*]+)\*\*/g, "$1")
+            .replace(/\*([^*]+)\*/g, "$1");
+        }
+
+        function renderInline(value) {
+          const tokens = [];
+          const token = (html) => {
+            const key = `%%TOKEN${tokens.length}%%`;
+            tokens.push([key, html]);
+            return key;
+          };
+
+          let text = value.replace(/`([^`]+)`/g, (_, code) => token(`<code>${escapeHtml(code)}</code>`));
+          text = escapeHtml(text);
+          text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+          text = text.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+          text = text.replace(/\[([^\]]+)\]\[([^\]]+)\]/g, (_, label, key) => {
+            const href = state.references.get(key.toLowerCase());
+            return href ? renderLink(label, href) : label;
+          });
+          text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => renderLink(label, href));
+          tokens.forEach(([key, html]) => {
+            text = text.replace(key, html);
+          });
+          return text;
+        }
+
+        function renderLink(label, href) {
+          const resolved = resolveHref(href.replace(/&amp;/g, "&"));
+          const external = /^(https?:|mailto:|tel:)/i.test(resolved);
+          const attrs = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+          return `<a href="${escapeAttr(resolved)}"${attrs}>${label}</a>`;
+        }
+
+        function resolveHref(rawHref) {
+          const href = rawHref.trim();
+          if (/^(https?:|mailto:|tel:)/i.test(href) || href.startsWith("#")) {
+            return href;
+          }
+
+          const [pathPart, hashPart] = href.split("#");
+          const hash = hashPart ? `#${hashPart}` : "";
+          const parts = pathPart.split("/").filter(Boolean);
+          let targetLang = state.lang;
+          if (parts.includes("pt-BR")) {
+            targetLang = "pt-BR";
+          } else if (parts.includes("en")) {
+            targetLang = "en";
+          }
+
+          let file = parts[parts.length - 1] || "README.md";
+          if (!file.toLowerCase().endsWith(".md")) {
+            file = "README.md";
+          }
+
+          return `docs.html?lang=${encodeURIComponent(targetLang)}&doc=${encodeURIComponent(file)}${hash}`;
+        }
+
+        function escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
+        function escapeAttr(value) {
+          return escapeHtml(value).replace(/`/g, "&#096;");
+        }
+
+        els.docList.addEventListener("click", (event) => {
+          const link = event.target.closest("a[data-doc]");
+          if (!link) return;
+          event.preventDefault();
+          state.doc = link.dataset.doc;
+          loadDocument();
+        });
+
+        document.querySelectorAll("[data-language]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const nextLang = normalizeLang(button.dataset.language);
+            if (nextLang === state.lang) return;
+            state.lang = nextLang;
+            if (!getDocMeta(state.lang, state.doc)) {
+              state.doc = "README.md";
+            }
+            loadDocument();
+          });
+        });
+
+        const initial = getInitialState();
+        state.lang = initial.lang;
+        state.doc = initial.doc;
+        loadDocument(false);
+      })();
+    </script>
+  </body>
+</html>
