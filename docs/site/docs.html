@@ -7,6 +7,8 @@
       name="description"
       content="Read the OpenSource for Humans project documentation in English or Portuguese."
     />
+    <link rel="icon" href="images/icon/initial-icon.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="images/icon/initial-icon.jpeg" />
     <title>OpenSource for Humans - Documentation</title>
     <style>
       :root {
@@ -105,9 +107,16 @@
         display: grid;
         place-items: center;
         border-radius: 8px;
-        background: var(--green);
-        color: #fff;
-        font-size: 1.15rem;
+        border: 1px solid rgba(31, 122, 92, 0.28);
+        background: var(--surface);
+        overflow: hidden;
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
       }
 
       .nav-links {
@@ -450,7 +459,9 @@
     <header>
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="index.html" aria-label="OpenSource for Humans">
-          <span class="brand-mark" aria-hidden="true">+</span>
+          <span class="brand-mark" aria-hidden="true">
+            <img src="images/icon/initial-icon.jpeg" alt="" />
+          </span>
           <span>OpenSource for Humans</span>
         </a>
         <div class="nav-links">
