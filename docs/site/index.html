@@ -754,43 +754,43 @@
               <rect x="48" y="130" width="220" height="112" rx="8" fill="#e6f5ee" stroke="#8fc7ae" />
               <text x="74" y="166" font-size="17" font-weight="800" fill="#15513f">People seeking help</text>
               <text x="74" y="194" font-size="13" fill="#53645c">No mandatory login</text>
-              <text x="74" y="216" font-size="13" fill="#53645c">No server-side personal data</text>
+              <text x="74" y="216" font-size="13" fill="#53645c">No personal data stored</text>
 
               <rect x="48" y="280" width="220" height="112" rx="8" fill="#e8f1fb" stroke="#8bb9e7" />
               <text x="74" y="316" font-size="17" font-weight="800" fill="#1f568c">Organizations</text>
               <text x="74" y="344" font-size="13" fill="#53645c">Services, contacts, hours</text>
-              <text x="74" y="366" font-size="13" fill="#53645c">Changes submitted for review</text>
+              <text x="74" y="366" font-size="13" fill="#53645c">Changes reviewed first</text>
 
               <rect x="48" y="430" width="220" height="112" rx="8" fill="#fff3d6" stroke="#e6c671" />
               <text x="74" y="466" font-size="17" font-weight="800" fill="#674509">Volunteer verifiers</text>
-              <text x="74" y="494" font-size="13" fill="#53645c">Sources, reports, duplicates</text>
-              <text x="74" y="516" font-size="13" fill="#53645c">No automatic publication</text>
+              <text x="74" y="494" font-size="13" fill="#53645c">Sources and reports</text>
+              <text x="74" y="516" font-size="13" fill="#53645c">Duplicates checked</text>
             </g>
 
             <g filter="url(#shadow)">
               <rect x="360" y="132" width="250" height="150" rx="8" fill="#ffffff" stroke="#dfe5dd" />
               <text x="392" y="168" font-size="18" font-weight="850" fill="#17211d">Public web app</text>
-              <text x="392" y="198" font-size="13" fill="#53645c">Home, search, service details</text>
-              <text x="392" y="220" font-size="13" fill="#53645c">Suggest service and report error</text>
+              <text x="392" y="198" font-size="13" fill="#53645c">Search and service details</text>
+              <text x="392" y="220" font-size="13" fill="#53645c">Suggest or report updates</text>
               <text x="392" y="242" font-size="13" fill="#53645c">Mobile-first and accessible</text>
 
               <rect x="360" y="340" width="250" height="150" rx="8" fill="#ffffff" stroke="#dfe5dd" />
               <text x="392" y="376" font-size="18" font-weight="850" fill="#17211d">Minimal admin panel</text>
-              <text x="392" y="406" font-size="13" fill="#53645c">Suggestions and reports queue</text>
+              <text x="392" y="406" font-size="13" fill="#53645c">Suggestion/report queue</text>
               <text x="392" y="428" font-size="13" fill="#53645c">Status, verification, history</text>
-              <text x="392" y="450" font-size="13" fill="#53645c">Human review before publishing</text>
+              <text x="392" y="450" font-size="13" fill="#53645c">Review before publishing</text>
             </g>
 
             <g filter="url(#shadow)">
               <rect x="704" y="118" width="230" height="118" rx="8" fill="#ffffff" stroke="#dfe5dd" />
               <text x="734" y="154" font-size="18" font-weight="850" fill="#17211d">Minimal public API</text>
-              <text x="734" y="184" font-size="13" fill="#53645c">GET services and categories</text>
-              <text x="734" y="206" font-size="13" fill="#53645c">POST suggestions and reports</text>
+              <text x="734" y="184" font-size="13" fill="#53645c">GET services/categories</text>
+              <text x="734" y="206" font-size="13" fill="#53645c">POST suggestions/reports</text>
 
               <rect x="704" y="280" width="230" height="118" rx="8" fill="#ffffff" stroke="#dfe5dd" />
-              <text x="734" y="316" font-size="18" font-weight="850" fill="#17211d">Institutional database</text>
-              <text x="734" y="346" font-size="13" fill="#53645c">Organizations, services, places</text>
-              <text x="734" y="368" font-size="13" fill="#53645c">Sources and verification logs</text>
+              <text x="734" y="316" font-size="18" font-weight="850" fill="#17211d">Service database</text>
+              <text x="734" y="346" font-size="13" fill="#53645c">Orgs, services, places</text>
+              <text x="734" y="368" font-size="13" fill="#53645c">Verification logs</text>
 
               <rect x="704" y="442" width="230" height="118" rx="8" fill="#ffffff" stroke="#dfe5dd" />
               <text x="734" y="478" font-size="18" font-weight="850" fill="#17211d">Aggregate metrics</text>
@@ -814,11 +814,10 @@
             <path d="M819 398 V442" stroke="#53645c" stroke-width="2" marker-end="url(#arrow)" fill="none" />
             <path d="M934 339 H962" stroke="#53645c" stroke-width="2" marker-end="url(#arrow)" fill="none" />
 
-            <rect x="360" y="566" width="574" height="58" rx="8" fill="#17211d" />
+            <rect x="360" y="566" width="574" height="76" rx="8" fill="#17211d" />
             <text x="392" y="590" font-size="14" font-weight="800" fill="#ffffff">MVP privacy rule</text>
-            <text x="392" y="612" font-size="13" fill="#d8e7df">
-              End users generate no server-side profile, individual history, precise GPS, or identifiable analytics.
-            </text>
+            <text x="392" y="614" font-size="13" fill="#d8e7df">End users generate no server-side profile, history, or GPS.</text>
+            <text x="392" y="636" font-size="13" fill="#d8e7df">Analytics must stay aggregate and non-identifiable.</text>
           </svg>
         </div>
         <p class="architecture-note">
@@ -969,37 +968,38 @@
           "OpenSource for Humans MVP architecture diagram": "Diagrama da arquitetura do MVP do OpenSource for Humans",
           "OpenSource for Humans MVP": "MVP do OpenSource for Humans",
           "Anonymous search + verified catalog + human review + aggregate metrics": "Busca anônima + catálogo verificado + revisão humana + métricas agregadas",
-          "People seeking help": "Pessoas buscando ajuda",
+          "People seeking help": "Quem busca ajuda",
           "No mandatory login": "Sem login obrigatório",
-          "No server-side personal data": "Sem dados pessoais no servidor",
+          "No personal data stored": "Sem dados pessoais",
           "Organizations": "Organizações",
-          "Services, contacts, hours": "Serviços, contatos, horários",
-          "Changes submitted for review": "Mudanças enviadas para revisão",
-          "Volunteer verifiers": "Pessoas voluntárias verificadoras",
-          "Sources, reports, duplicates": "Fontes, relatos, duplicidades",
-          "No automatic publication": "Sem publicação automática",
-          "Public web app": "Aplicação web pública",
-          "Home, search, service details": "Início, busca e detalhes do serviço",
-          "Suggest service and report error": "Sugerir serviço e relatar erro",
+          "Services, contacts, hours": "Serviços e horários",
+          "Changes reviewed first": "Mudanças revisadas antes",
+          "Volunteer verifiers": "Voluntários",
+          "Sources and reports": "Fontes e relatos",
+          "Duplicates checked": "Duplicidades verificadas",
+          "Public web app": "App público",
+          "Search and service details": "Busca e detalhes do serviço",
+          "Suggest or report updates": "Sugerir ou relatar",
           "Mobile-first and accessible": "Mobile-first e acessível",
-          "Minimal admin panel": "Painel administrativo mínimo",
-          "Suggestions and reports queue": "Fila de sugestões e relatos",
-          "Status, verification, history": "Status, verificação e histórico",
-          "Human review before publishing": "Revisão humana antes da publicação",
-          "Minimal public API": "API pública mínima",
-          "GET services and categories": "GET serviços e categorias",
-          "POST suggestions and reports": "POST sugestões e relatos",
-          "Institutional database": "Base institucional",
-          "Organizations, services, places": "Organizações, serviços, locais",
-          "Sources and verification logs": "Fontes e logs de verificação",
-          "Aggregate metrics": "Métricas agregadas",
+          "Minimal admin panel": "Admin mínimo",
+          "Suggestion/report queue": "Fila de sugestões/relatos",
+          "Status, verification, history": "Status, revisão, histórico",
+          "Review before publishing": "Revisar antes de publicar",
+          "Minimal public API": "API pública",
+          "GET services/categories": "GET serviços/categorias",
+          "POST suggestions/reports": "POST sugestões/relatos",
+          "Service database": "Base de serviços",
+          "Orgs, services, places": "Orgs, serviços, locais",
+          "Verification logs": "Logs de verificação",
+          "Aggregate metrics": "Métricas",
           "Searches by city/category": "Buscas por cidade/categoria",
           "No profile or tracking": "Sem perfil ou rastreamento",
           "Jobs": "Tarefas",
           "Import": "Importar",
           "Review": "Revisar",
           "MVP privacy rule": "Regra de privacidade do MVP",
-          "End users generate no server-side profile, individual history, precise GPS, or identifiable analytics.": "Usuários finais não geram perfil no servidor, histórico individual, GPS preciso ou analytics identificáveis.",
+          "End users generate no server-side profile, history, or GPS.": "Usuários finais não geram perfil, histórico ou GPS.",
+          "Analytics must stay aggregate and non-identifiable.": "Analytics devem ser agregados e não identificáveis.",
           "Next evolution: semantic search, organization dashboards, and local chapters should only come after the MVP proves value with trustworthy data and preserved privacy.": "Próxima evolução: busca semântica, painéis para organizações e núcleos locais só devem vir depois que o MVP provar valor com dados confiáveis e privacidade preservada.",
           "Start with one small task": "Comece com uma tarefa pequena",
           "The project needs concrete action. These are good first areas for opening or taking issues.": "O projeto precisa de ação concreta. Estas são boas primeiras áreas para abrir ou assumir issues.",
